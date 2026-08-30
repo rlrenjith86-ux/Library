@@ -1,12 +1,40 @@
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
+
+import Home from "./pages/Home.jsx";
+import Register from "./pages/Register.jsx";
+
 function App() {
   return (
-    <div>
-      <h1>Smart Library Portal</h1>
+    <BrowserRouter>
+      <div className="app-container">
 
-      <p>
-        Smart Library Portal is starting successfully.
-      </p>
-    </div>
+        <Navbar />
+
+        <main className="main-content">
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}
+            />
+
+            <Route
+              path="/register"
+              element={<Register />}
+            />
+          </Routes>
+        </main>
+
+        <Footer />
+
+      </div>
+    </BrowserRouter>
   );
 }
 
