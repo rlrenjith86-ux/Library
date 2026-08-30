@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  background: #f5f7fb;
+
+  color: #222;
+}
+
+h1 {
+  text-align: center;
+
+  margin-top: 100px;
+
+  color: #1f3c88;
+}
+
+p {
+  text-align: center;
+}
