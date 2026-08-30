@@ -1,6 +1,8 @@
-import { getDB } from "../lib/mongodb.js";
-import { hashPassword } from "../lib/auth.js";
-
+import { getDB } from "./lib/mongodb.js";
+import {
+  comparePassword,
+  createToken
+} from "./lib/auth.js";
 export default async (request) => {
   if (request.method !== "POST") {
     return Response.json(
