@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 import { getDB } from "./lib/mongodb.js";
 import { verifyToken } from "./lib/auth.js";
 
@@ -60,10 +61,9 @@ export default async (request) => {
         requests.map(async (item) => {
 
           const user =
-            await usersCollection.findOne({
-              _id: item.userId
-            });
-
+  await usersCollection.findOne({
+    _id: new ObjectId(item.userId)
+  });
           return {
             ...item,
 
