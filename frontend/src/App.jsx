@@ -15,7 +15,6 @@ import Dashboard from "./pages/Dashboard.jsx";
 import AdminDashboard from "./pages/AdminDashboard.jsx";
 
 import Books from "./pages/Books.jsx";
-import Books from "./pages/Books.jsx";
 import BorrowRequests from "./pages/BorrowRequests.jsx";
 import Resources from "./pages/Resources.jsx";
 import Profile from "./pages/Profile.jsx";
