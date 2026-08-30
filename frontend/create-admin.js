@@ -12,21 +12,16 @@ const createAdmin = async () => {
 
     const db = client.db(process.env.MONGODB_DB);
 
-    const existingAdmin = await db
-      .collection("users")
-      .findOne({
-        registerNumber: "ADMIN001"
-      });
+    const existingAdmin = await db.collection("users").findOne({
+      registerNumber: "ADMIN001"
+    });
 
     if (existingAdmin) {
       console.log("Admin already exists!");
       return;
     }
 
-    const hashedPassword = await bcrypt.hash(
-      "Admin@123",
-      10
-    );
+    const hashedPassword = await bcrypt.hash("Admin@123", 10);
 
     await db.collection("users").insertOne({
       name: "Library Admin",
