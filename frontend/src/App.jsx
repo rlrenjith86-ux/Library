@@ -15,6 +15,8 @@ import Dashboard from "./pages/Dashboard.jsx";
 import AdminDashboard from "./pages/AdminDashboard.jsx";
 
 import Books from "./pages/Books.jsx";
+import Books from "./pages/Books.jsx";
+import BorrowRequests from "./pages/BorrowRequests.jsx";
 
 function App() {
   return (
@@ -68,7 +70,24 @@ function App() {
     </ProtectedRoute>
   }
 />
-          </Routes>
+    <Route
+  path="/books"
+  element={
+    <ProtectedRoute>
+      <Books />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/borrow-requests"
+  element={
+    <ProtectedRoute>
+      <BorrowRequests />
+    </ProtectedRoute>
+  }
+/> 
+     </Routes>
 
         </main>
 
