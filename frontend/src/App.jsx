@@ -6,20 +6,26 @@ import {
 
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
 import Home from "./pages/Home.jsx";
 import Register from "./pages/Register.jsx";
 import Login from "./pages/Login.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import AdminDashboard from "./pages/AdminDashboard.jsx";
 
 function App() {
   return (
     <BrowserRouter>
+
       <div className="app-container">
 
         <Navbar />
 
         <main className="main-content">
+
           <Routes>
+
             <Route
               path="/"
               element={<Home />}
@@ -29,16 +35,38 @@ function App() {
               path="/register"
               element={<Register />}
             />
-<Route
-  path="/login"
-  element={<Login />}
-/>
+
+            <Route
+              path="/login"
+              element={<Login />}
+            />
+
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute adminOnly={true}>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              }
+            />
+
           </Routes>
+
         </main>
 
         <Footer />
 
       </div>
+
     </BrowserRouter>
   );
 }
