@@ -14,6 +14,8 @@ import Login from "./pages/Login.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import AdminDashboard from "./pages/AdminDashboard.jsx";
 
+import Books from "./pages/Books.jsx";
+
 function App() {
   return (
     <BrowserRouter>
@@ -58,7 +60,14 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
+<Route
+  path="/books"
+  element={
+    <ProtectedRoute>
+      <Books />
+    </ProtectedRoute>
+  }
+/>
           </Routes>
 
         </main>
