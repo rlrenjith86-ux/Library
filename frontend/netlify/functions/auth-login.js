@@ -50,6 +50,9 @@ console.log(
   "User found:",
   user ? user.registerNumber : "NO USER"
 );
+    user ? user.registerNumber : "NO USER"
+    );
+
     if (!user) {
       return Response.json(
         {
@@ -69,7 +72,6 @@ console.log(
         user.password
       );
 console.log("Password correct:", passwordCorrect);
-
     if (!passwordCorrect) {
       return Response.json(
         {
