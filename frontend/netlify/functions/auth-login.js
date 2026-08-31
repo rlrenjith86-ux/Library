@@ -45,7 +45,11 @@ export default async (request) => {
           { phone: identifier }
         ]
       });
-
+console.log("Login identifier:", identifier);
+console.log(
+  "User found:",
+  user ? user.registerNumber : "NO USER"
+);
     if (!user) {
       return Response.json(
         {
@@ -64,6 +68,7 @@ export default async (request) => {
         password,
         user.password
       );
+console.log("Password correct:", passwordCorrect);
 
     if (!passwordCorrect) {
       return Response.json(
