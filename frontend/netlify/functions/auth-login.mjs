@@ -1,8 +1,8 @@
-import { getDB } from "../lib/mongodb.js";
+import { getDB } from "./lib/mongodb.js";
 import {
   comparePassword,
     createToken
-    } from "../lib/auth.js";
+    } from "./lib/auth.js";
 
     export default async (request) => {
 
